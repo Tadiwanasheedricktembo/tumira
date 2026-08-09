@@ -1,0 +1,32 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editors
+.vscode/
+.idea/
+*.iml
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Android / Gradle
+android/.gradle/
+android/**/build/
+android/local.properties
+android/.idea/
+android/app/release/
+android/app/debug/
+
+# Desktop / Node
+desktop/node_modules/
+desktop/.tmp/
+desktop/shared-files/
+
+# Project temp files
+*.tmp
+temp-upload.txt
+test-upload.txt

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tumira Server</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <div class="qs-shell">
+    <aside class="qs-sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <div class="app-title">Tumira</div>
+        <div class="online-status"><span class="status-dot" id="statusDot"></span><span id="statusText">Online</span></div>
+      </div>
+      <div class="sidebar-meta" id="sidebarMeta">Tumira · 127.0.0.1:3000</div>
+
+      <nav class="nav-list" role="navigation" aria-label="Main navigation">
+        <button class="nav-item active" data-section="files" id="nav-files">
+          <span class="nav-icon" style="background:#1f2c34"><span class="icon-circle" style="background:#00a884">📁</span></span>
+          <div class="nav-text"><div class="nav-title">Files</div><div class="nav-sub" id="nav-files-sub">0 shared files</div></div>
+          <div class="nav-count" id="filesCountBadge">0</div>
+        </button>
+
+        <button class="nav-item" data-section="devices" id="nav-devices">
+          <span class="nav-icon" style="background:#1f2c34"><span class="icon-circle" style="background:#53bdeb">🖥️</span></span>
+          <div class="nav-text"><div class="nav-title">Devices</div><div class="nav-sub" id="nav-devices-sub">0 connected</div></div>
+          <div class="nav-count" id="devicesCountBadge">0</div>
+        </button>
+
+        <button class="nav-item" data-section="qr" id="nav-qr">
+          <span class="nav-icon" style="background:#1f2c34"><span class="icon-circle" style="background:#cfc4ff">🔲</span></span>
+          <div class="nav-text"><div class="nav-title">Hotspot</div><div class="nav-sub">Scan to connect</div></div>
+        </button>
+
+        <button class="nav-item" data-section="activity" id="nav-activity">
+          <span class="nav-icon" style="background:#1f2c34"><span class="icon-circle" style="background:#f0b429">📈</span></span>
+          <div class="nav-text"><div class="nav-title">Activity</div><div class="nav-sub" id="nav-activity-sub">Last: -</div></div>
+        </button>
+
+        <button class="nav-item" data-section="chat" id="nav-chat">
+          <span class="nav-icon" style="background:#1f2c34"><span class="icon-circle" style="background:#fc8c6b">💬</span></span>
+          <div class="nav-text"><div class="nav-title">Chat</div><div class="nav-sub">All devices</div></div>
+        </button>
+      </nav>
+    </aside>
+
+    <main class="qs-main">
+      <header class="main-header" id="mainHeader">
+        <div class="header-left">
+          <div class="section-icon" id="headerIcon">📁</div>
+          <div class="header-text"><div class="header-title" id="headerTitle">Files</div><div class="header-sub" id="headerSub">0 shared files</div></div>
+        </div>
+        <div class="header-actions">
+          <button id="sortBtn" class="icon-btn">⇅</button>
+          <button id="uploadFileButton" class="icon-btn">⬆️</button>
+          <button id="moreBtn" class="icon-btn">⋯</button>
+          <input id="fileUploadInput" type="file" hidden />
+        </div>
+      </header>
+
+      <section class="feed-area" id="feedArea">
+        <!-- feed items rendered here -->
+      </section>
+
+      <footer class="input-bar">
+        <button id="attachBtn" class="attach-btn">📎</button>
+        <input id="mainInput" class="main-input" type="text" placeholder="Share a file or send a message…" autocomplete="off" />
+        <button id="sendBtn" class="send-btn">➤</button>
+      </footer>
+    </main>
+  </div>
+
+  <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <script src="/app.js"></script>
+</body>
+</html>
